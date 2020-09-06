@@ -1,0 +1,17 @@
+.card-filter{
+	margin-top: 2%;
+}
+#clearAll{
+	margin-top: 2%;
+}
+ img{
+	width: 100%;
+	display: inline-block;
+
+}
+ul li img{
+	width: 3%;
+	display: inline-block;
+}
+
+
