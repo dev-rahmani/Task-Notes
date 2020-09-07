@@ -46,8 +46,8 @@ function loadData() {
 function dataGenerat(data, index) {
 	return `
 		<li class="list-group-item d-flex justify-content-between align-items-center">${data}
-			<a href="#" class="badge">
-				<img src="img/delete.png" class="rounded float-right" alt="delete" onclick="removeDataFromLs(${index})">
+			<a href="#" class="badge" id="${inex}">
+				<img src="img/delete.png" class="rounded float-right" alt="delete">
 			</a>
 		</li>
 	`
@@ -71,7 +71,7 @@ $('#filter').keyup(function () {
 	let li = "";
 	for (let i = 0; i < tasks.length; i++) {
 		if (tasks[i].includes($("#filter").val())) {
-			li += dataGenerat(tasks[i],i)
+			li += dataGenerat(tasks[i], i)
 			$("ul").html("").append(li);
 		}
 	}
@@ -90,7 +90,7 @@ $("ul").click(function (event) {
 	if (event.target.parentElement.classList.contains("badge")) {
 		if (confirm("are you sure?")) {
 			event.target.parentElement.parentElement.remove();
-			removeDataFromLs();
+			removeDataFromLs(event.target.parentElement.id);
 		}
 
 
